@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditProfileActivity">
+
+    <ImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_girl"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:alpha="0.5">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:padding="10dp"
+            android:tint="@color/white"
+            android:layout_gravity="center_vertical"/>
+
+        <com.weds.lordbond.custom_view.TextViewBoldLordBond
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"/>
+
+        <com.weds.lordbond.custom_view.LordBondTextView
+            android:id="@+id/preview_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/ic_review"
+            android:drawableTint="@color/white"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_education_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignBottom="@id/user_avatar"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.weds.lordbond.custom_view.LordBondTextView
+                android:id="@+id/education_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/profile_completeness"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <ImageView
+                android:id="@+id/edit_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_weight="1"
+                android:progress="50"
+                android:layout_gravity="center_vertical"
+                android:progressTint="@color/colorPrimary"
+                />
+
+            <com.weds.lordbond.custom_view.LordBondTextView
+                android:id="@+id/edit_figure_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD PHOTOS"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginLeft="50dp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_avatar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewBoldLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_info"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <EditText
+                    android:id="@+id/user_info_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:gravity="top"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:padding="5dp"
+                    android:scrollbars="vertical"
+                    android:inputType="textMultiLine"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name / नाम"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender / लिंग"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_gender_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age / आयु"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_age_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height / ऊंचाई"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_height_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mother Tongue / मातृ भाषा"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_tongue_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country / देश"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_country_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Martial Status / वैवाहिक स्थिति"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_martial_status_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Religion / धर्म"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_religion_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cast / डाली"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_cast_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education / शिक्षा"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_education_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occupation / व्यवसाय"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_occupation_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Annual Income / वार्षिक आय"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_income_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family Status / पारिवारिक स्थिति"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_family_status_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family Type / पारिवारिक प्रकार"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_family_type_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family Value / पारिवारिक मूल्य"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_family_value_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOB / जन्म तिथि"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_dob_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location / स्थान"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_location_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_btn_bg"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

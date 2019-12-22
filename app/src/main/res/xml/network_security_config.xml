@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+
+<domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains= "true">http://apidemo.westindia.cloudapp.azure.com</domain>
+    <domain includeSubdomains="true">apidemo.westindia.cloudapp.azure.com</domain>
+    <domain includeSubdomains="true">http://www.apidemo.westindia.cloudapp.azure.com</domain>
+    <domain includeSubdomains="true">http://apidemo.westindia.cloudapp.azure.com:1621</domain>
+</domain-config>
+</network-security-config>

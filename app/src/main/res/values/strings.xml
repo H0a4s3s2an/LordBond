@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">LordBond</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="login_identify">Sign In</string>
+    <string name="create_account">Create an account, Signup ?</string>
+    <string name="full_name">Enter Name</string>
+    <string name="matrimony_profile">Matrimony Profile For</string>
+    <string name="number">Mobile Number</string>
+    <string name="living_country">Country Living In</string>
+    <string name="gender">Gender</string>
+    <string name="martial_status">Martial Status</string>
+    <string name="signup">Sign Up</string>
+    <string name="do_signin">Already have an account, Sign In ?</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="continued">Continue</string>
+    <string name="verification">Verification</string>
+    <string name="verification_txt">Enter the 6 digit OTP that was sent to (+91) 123456789 </string>
+    <string name="confirm">Confirm</string>
+    <string name="reset_otp">Resend OTP ?</string>
+    <string name="city">City</string>
+    <string name="never_married">Single</string>
+    <string name="widowed">Widowed</string>
+    <string name="divorced">Divorced</string>
+    <string name="divorce_awaiting">Awaiting Divorce</string>
+    <string name="profile_for_seld">Self</string>
+    <string name="profile_for_daughter">Daughter</string>
+    <string name="profile_for_son">Son</string>
+    <string name="living_contry">India</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!-- Main Screen -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_notification">Notification</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="basic_info">Basic Information</string>
+    <string name="name_identity">Name</string>
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="mother_tongue">Mother Tongue</string>
+    <string name="religion">Religion</string>
+    <string name="cast_division">Cast/Division</string>
+    <string name="qualification">Highest Qualification</string>
+    <string name="occupation">Occupation</string>
+    <string name="annual_income">Annual Income</string>
+    <string name="family_status">Family Status</string>
+    <string name="family_type">Family Type</string>
+    <string name="family_value">Family Value</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="filter_profile">Filter Profile</string>
+    <string name="cast">Cast</string>
+    <string name="salary">Salary</string>
+    <string name="profile_completeness">Profile Completeness</string>
+    <string name="orthodox_family_value">Orthodox</string>
+    <string name="traditional_family_value">Traditional</string>
+    <string name="moderate_family_value">Moderate</string>
+    <string name="liberal_family_value">Liberal</string>
+    <string name="joint_family_type">Joint</string>
+    <string name="nuclear_family_type">Nuclear</string>
+    <string name="middle_class_family_status">Middle Class</string>
+    <string name="rich_family_type">Rich</string>
+    <string name="upper_class_family_type">Upper Middle Class</string>
+    <string name="afluent_family_type">Afluent</string>
+
+</resources>

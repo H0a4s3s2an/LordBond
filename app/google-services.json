@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "248798870277",
+    "firebase_url": "https://lordbond-cc90e.firebaseio.com",
+    "project_id": "lordbond-cc90e",
+    "storage_bucket": "lordbond-cc90e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248798870277:android:4c65e851597a037d87956c",
+        "android_client_info": {
+          "package_name": "com.weds.lordbond"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248798870277-7egnnhigtv57rtmqkfgo9j1vb6qam04q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weds.lordbond",
+            "certificate_hash": "caf250c1e7156d0ce46d72a044b86c44fc69e642"
+          }
+        },
+        {
+          "client_id": "248798870277-k4ea76t0jiavfjb97qh2k5q1c754m1bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZx9xt7XWmb3L35y33wBjprBzPHi9XQu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248798870277-k4ea76t0jiavfjb97qh2k5q1c754m1bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

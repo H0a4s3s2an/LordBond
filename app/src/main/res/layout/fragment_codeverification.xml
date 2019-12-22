@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/img_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_otp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+
+        <com.weds.lordbond.custom_view.LordBondTextView
+            android:id="@+id/verification_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verification"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/img_otp"
+            android:layout_marginTop="5dp"
+            />
+
+        <com.weds.lordbond.custom_view.TextViewLightLordBond
+            android:id="@+id/ver_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verification_txt"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/verification_tv"
+            android:textAlignment="center"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_above="@id/bottom_ll"
+            android:layout_below="@id/ver_tv"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/first_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:inputType="number"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/second_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:inputType="number"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/third_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/fourth_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/fifth_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/sixth_number_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_weight=".15"
+                android:maxLength="1"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp">
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_btn_bg"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_alignParentBottom="true"
+            />
+
+        <com.weds.lordbond.custom_view.TextViewLightLordBond
+            android:id="@+id/resend_otp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_otp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/confirm_btn"
+            />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
