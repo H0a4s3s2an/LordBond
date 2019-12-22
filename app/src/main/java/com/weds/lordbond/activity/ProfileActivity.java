@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.weds.lordbond.R;
 import com.weds.lordbond.dataSource.LoginPresenter;
+import com.weds.lordbond.helper.GlideHelper;
 import com.weds.lordbond.model.LoginResponse;
 import com.weds.lordbond.model.SignUp;
 import com.weds.lordbond.util.Constants;
@@ -85,6 +86,7 @@ public class ProfileActivity extends BaseActivity implements LoginPresenter.prof
     }
     
     private void setData() {
+        GlideHelper.loadImage(this, profileData.getProfileImage(), user_avatar);
         if (profileData.getBio() != null) userBio.setText(profileData.getBio());
         if (profileData.getName() != null) fullName.setText(profileData.getName());
         if (profileData.getUserName() != null) userNameTv.setText(profileData.getUserName());

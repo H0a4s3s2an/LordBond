@@ -36,11 +36,11 @@ public class LoginPresenter {
 	}
 	
 	public void register(String userName, String email, String password, String number, String gender,
-	                     String profileFor, String martialStatus) {
+	                     String profileFor, String martialStatus, String dob) {
 		final SignUp signUp = new SignUp();
 		signUp.setName(userName);
 		signUp.setGender(gender);
-		signUp.setDateOfBirth("1997-11-03");
+		signUp.setDateOfBirth(dob);
 		signUp.setMobile(number);
 		signUp.setCountryID(1);
 		signUp.setUserName(userName);
@@ -202,7 +202,7 @@ public class LoginPresenter {
 	}
 	
 	public String validateInputData(EditText userNameET, EditText emailTV, EditText passwordTV, EditText mobile,
-	                                EditText genderET, EditText profileFor, EditText martialStatus) {
+	                                EditText genderET, EditText profileFor, EditText martialStatus, EditText dob) {
 		if (userNameET.getText().toString().equalsIgnoreCase("")) {
 			return "username should not be empty";
 		} else if (emailTV.getText().toString().equalsIgnoreCase("")) {
@@ -211,13 +211,14 @@ public class LoginPresenter {
 			return "password should not be empty";
 		} else if (mobile.getText().toString().equalsIgnoreCase("")) {
 			return "Enter Mobile Number";
-		}
-		else if (genderET.getText().toString().equalsIgnoreCase("")) {
+		} else if (genderET.getText().toString().equalsIgnoreCase("")) {
 			return "gender should not be empty";
 		} else if (profileFor.getText().toString().equalsIgnoreCase("")) {
 			return "select profile for from list.";
 		} else if (martialStatus.getText().toString().equalsIgnoreCase("")) {
 			return " please select martial status";
+		} else if (dob.getText().toString().equalsIgnoreCase("")) {
+			return "please select date of birth";
 		}
 		
 		return "";

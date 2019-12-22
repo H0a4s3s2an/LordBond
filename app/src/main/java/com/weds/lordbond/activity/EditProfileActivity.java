@@ -1,10 +1,14 @@
 package com.weds.lordbond.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +19,13 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.kbeanie.multipicker.api.CameraImagePicker;
+import com.kbeanie.multipicker.api.callbacks.ImagePickerCallback;
+import com.kbeanie.multipicker.api.entity.ChosenImage;
 import com.weds.lordbond.R;
 import com.weds.lordbond.dataSource.LoginPresenter;
 import com.weds.lordbond.helper.ApplicationLordBond;
+import com.weds.lordbond.helper.GlideHelper;
 import com.weds.lordbond.model.Caste;
 import com.weds.lordbond.model.Countries;
 import com.weds.lordbond.model.Languages;
@@ -26,9 +34,12 @@ import com.weds.lordbond.model.Qualifications;
 import com.weds.lordbond.model.Religions;
 import com.weds.lordbond.model.SignUp;
 import com.weds.lordbond.util.Constants;
+import com.weds.lordbond.util.Utils;
+
+import java.util.List;
 
 public class EditProfileActivity extends BaseActivity implements LoginPresenter.profileEventListener,
-        View.OnClickListener {
+        ImagePickerCallback, View.OnClickListener {
     
     private ImageView backImg, userImg, editImg;
     private TextView previewTv;
@@ -52,7 +63,9 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     private String[] familyValueList;
     private String[] familyTypeList;
     private String[] familyStatusList;
+    private CameraImagePicker cameraPicker;
     private int countryItem, langItem, religionItem, castItem, educationItem, qualificationItem;
+    private String filePath = null;
     
     
     @Override
@@ -104,6 +117,7 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
         userFamilyStatusET.setOnClickListener(this);
         userFamilyValueET.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        editImg.setOnClickListener(this);
         
         martialStatusList = new String[] {
                 getString(R.string.never_married),
@@ -331,6 +345,9 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
                 });
                 dialogFamilyValue.create().show();
                 break;
+            case R.id.edit_img:
+                selectGalleryImage();
+                break;
             case R.id.submit_btn:
                 SignUp profileData = new SignUp();
 	        	profileData.setBio(userInfoET.getText().toString());
@@ -351,11 +368,53 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
 	        	profileData.setFamilyStatus(userFamilyStatusET.getText().toString());
 	        	profileData.setFamilyType(userFamilyType.getText().toString());
 	        	profileData.setFamilyValue(userFamilyValueET.getText().toString());
+	        	profileData.setProfileImage(filePath);
 	
 	            showProgressDialog("Updating...");
 	        	loginPresenter.updateProfile(profileData);
 	        	break;
         }
+    }
+    
+    private void selectGalleryImage() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, Constants.GALLERY_PHOTO_REQUEST_CODE_KEY);
+    }
+    
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case Constants.GALLERY_PHOTO_REQUEST_CODE_KEY:
+                    onSelectedFromGalleryResults(data);
+                    break;
+//                case Picker.PICK_IMAGE_CAMERA:
+//                    if (cameraPicker == null) {
+//                        cameraPicker = new CameraImagePicker(this);
+//                        cameraPicker.reinitialize(filePath);
+//                    }
+//                    cameraPicker.submit(data);
+//                    break;
+                default:
+                    break;
+            }
+        } else {
+        
+        }
+    }
+    
+    private void onSelectedFromGalleryResults(Intent data) {
+        Bitmap bitmap = null;
+        if (data != null) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        userImg.setImageBitmap(bitmap);
+        filePath = Utils.encodeTobase64(bitmap);
     }
     
     @Override
@@ -372,6 +431,7 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     }
     
     private void setData() {
+        GlideHelper.loadImage(this, editProfileData.getProfileImage(), userImg);
         if (editProfileData.getBio() != null) userInfoET.setText(editProfileData.getBio());
         if (editProfileData.getUserName() != null) userNameET.setText(editProfileData.getUserName());
         if (editProfileData.getGender() != null) userGenderET.setText(editProfileData.getGender());
@@ -439,4 +499,13 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     
     }
     
+    @Override
+    public void onImagesChosen(List<ChosenImage> list) {
+    
+    }
+    
+    @Override
+    public void onError(String s) {
+    
+    }
 }

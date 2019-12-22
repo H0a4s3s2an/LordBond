@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
     implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.kbeanie:multipicker:1.5@aar'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'

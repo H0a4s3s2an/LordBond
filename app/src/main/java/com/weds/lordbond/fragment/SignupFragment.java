@@ -1,6 +1,7 @@
 package com.weds.lordbond.fragment;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,11 +24,17 @@ import com.weds.lordbond.dataSource.LoginPresenter;
 import com.weds.lordbond.util.Constants;
 import com.weds.lordbond.util.Utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class SignupFragment extends BaseFragment implements  LoginPresenter.onEventClickLIstener,
         View.OnClickListener {
 
     private EditText userNameET, emailTV, passwordTV, mobileET, mProfileET, countryET,
-    genderET, martialStatusET;
+    genderET, martialStatusET, dobET;
+	private DatePickerDialog.OnDateSetListener date;
+	private Calendar myCalendar;
     private TextView doLoginTv;
     private Button signupBtn;
     private View rootView;
@@ -35,6 +43,7 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
     private String[] martialStatusList;
     private String[] profileForList;
     private String[] genderSelectionList;
+	private SimpleDateFormat sdf;
 
     public SignupFragment() {
         // Required Constructor
@@ -73,6 +82,7 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
         mProfileET = rootView.findViewById(R.id.profile_et);
         genderET = rootView.findViewById(R.id.gender_et);
         martialStatusET = rootView.findViewById(R.id.martial_status_et);
+        dobET = rootView.findViewById(R.id.dob_et);
         
         countryET.setText(R.string.living_contry);
         countryET.setEnabled(false);
@@ -82,6 +92,7 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
         genderET.setOnClickListener(this);
         signupBtn.setOnClickListener(this);
         doLoginTv.setOnClickListener(this);
+        dobET.setOnClickListener(this);
         
         martialStatusList = new String[] {
           getString(R.string.never_married),
@@ -100,6 +111,20 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
           getString(R.string.male),
           getString(R.string.female)
         };
+	
+	    String myFormat = "yyyy-MM-dd"; //In which you need put here
+	    sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
+	    myCalendar = Calendar.getInstance();
+	    date = new DatePickerDialog.OnDateSetListener() {
+		    @Override
+		    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+			    // TODO Auto-generated method stub
+			    myCalendar.set(Calendar.YEAR, year);
+			    myCalendar.set(Calendar.MONTH, month);
+			    myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+			    dobET.setText(sdf.format(myCalendar.getTime()));
+		    }
+	    };
         
         loginPresenter = new LoginPresenter(this);
     }
@@ -116,6 +141,7 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
             bundle.putString(Constants.PROFILE_FOR_CODE_KEY, mProfileET.getText().toString().trim());
             bundle.putString(Constants.GENDER_CODE_KEY, genderET.getText().toString().trim());
             bundle.putString(Constants.MARTIAL_STAUS_CODE_KEY, martialStatusET.getText().toString().trim());
+            bundle.putString(Constants.DOB_CODE_KEY, dobET.getText().toString().trim());
             codeVerificationFragment.setArguments(bundle);
             fragmentChangeListener.onFragmentChange(codeVerificationFragment, false,
                     CodeVerificationFragment.class.getSimpleName());
@@ -170,9 +196,16 @@ public class SignupFragment extends BaseFragment implements  LoginPresenter.onEv
                 });
                 dialogProfile.create().show();
                 break;
+	        case R.id.dob_et:
+		        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), date, myCalendar
+				        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+				        myCalendar.get(Calendar.DAY_OF_MONTH));
+		        
+		        datePickerDialog.show();
+	        	break;
             case R.id.signup_btn:
                 validateForm(loginPresenter.validateInputData(userNameET, emailTV, passwordTV, mobileET, genderET,
-                        mProfileET, martialStatusET));
+                        mProfileET, martialStatusET, dobET));
                 break;
             case R.id.do_sign_in_tv:
                 fragmentChangeListener.onFragmentChange(new LoginFragment(), false, LoginFragment.class.getSimpleName());

@@ -42,12 +42,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
     	
     	holder.userNameTv.setText(arrayList.get(position).getUserName());
-    	holder.figureTv.setText(arrayList.get(position).getHeight().concat("").concat("Ft"));
+    	holder.figureTv.setText(arrayList.get(position).getHeight().concat(" ").concat("Ft"));
     	holder.educationTv.setText(arrayList.get(position).getOccupation());
-//        Glide.with(context)
-//                .load(Base64.decode(arrayList.get(position).getProfileImage(), Base64.DEFAULT))
-//                .placeholder(R.drawable.ic_girl)
-//                .into(holder.userAvatar);
+        GlideHelper.loadImage(context, arrayList.get(position).getProfileImage(), holder.userAvatar);
     	
         holder.profileLay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +75,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             super(itemView);
             
             profileLay = itemView.findViewById(R.id.profile_ll);
-            userAvatar = itemView.findViewById(R.id.user_avatar);
+            userAvatar = itemView.findViewById(R.id.avatar_img);
             userNameTv = itemView.findViewById(R.id.name_tv);
             figureTv = itemView.findViewById(R.id.figure_tv);
             educationTv = itemView.findViewById(R.id.education_tv);

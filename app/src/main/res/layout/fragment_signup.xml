@@ -61,14 +61,18 @@
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content">-->
 
-
-            <EditText
-                android:id="@+id/mobile_number_et"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/number"
-                android:layout_marginTop="10dp" />
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/mobile_number_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
                 <EditText
                     android:id="@+id/profile_et"
@@ -78,6 +82,15 @@
                     android:layout_marginTop="10dp"
                     android:inputType="none"
                     android:focusable="false"/>
+
+            <EditText
+                android:id="@+id/dob_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:hint="@string/date_of_birth"
+                android:inputType="none" />
 
 <!--            </com.google.android.material.textfield.TextInputLayout>-->
 

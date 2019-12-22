@@ -26,7 +26,6 @@
             android:id="@+id/avatar_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_girl"
             android:scaleType="fitXY"/>
 
     </androidx.cardview.widget.CardView>

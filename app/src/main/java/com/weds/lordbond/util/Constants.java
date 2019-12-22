@@ -15,4 +15,8 @@ public class Constants {
     public static final String MARTIAL_STAUS_CODE_KEY = "MARTIAL_STATUS_CODE_KEY";
     public static final String VIEW_PROFILE_CODE_KEY = "VIEW_PROFILE_CODE_KEY";
     public static final String PROFILE_UPDATE_CODE_KEY = "PROFILE_UPDATE_CODE_KEY";
+    public static final String DOB_CODE_KEY = "DOB_CODE_KEY";
+    
+    //Numbers
+    public static final int GALLERY_PHOTO_REQUEST_CODE_KEY = 1;
 }

@@ -14,12 +14,17 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 import com.weds.lordbond.R;
 import com.weds.lordbond.adapter.MainPagerAdapter;
 import com.weds.lordbond.custom_view.LordBondViewPager;
 import com.weds.lordbond.dataSource.LoginPresenter;
 import com.weds.lordbond.helper.ApplicationLordBond;
+import com.weds.lordbond.helper.GlideHelper;
+import com.weds.lordbond.model.LoginResponse;
 import com.weds.lordbond.util.Constants;
+
+import java.util.Random;
 
 public class DashBoradActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -46,7 +51,10 @@ public class DashBoradActivity extends BaseActivity implements BottomNavigationV
 
         mainViewPager.setAdapter(mainPagerAdapter);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+    
+        LoginResponse loginResponse = new Gson().fromJson(ApplicationLordBond.preferencesManager.getStringValue(Constants.LOGGED_IN_USER_KEY), LoginResponse.class);
         ImageView imageView = findViewById(R.id.user_avatar);
+        GlideHelper.loadImage(DashBoradActivity.this, loginResponse.getProfileImage(), imageView);
         ImageView logoutImage = findViewById(R.id.logout);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

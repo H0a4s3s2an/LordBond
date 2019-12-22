@@ -11,6 +11,7 @@ MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Hassan Javaid\.grad
 MERGED from [de.hdodenhof:circleimageview:3.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\1298f27ca15c01e44f0764c993abb834\circleimageview-3.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\b0f5dc1dd65fd824a88826a2604954be\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:17:1-42:12
+MERGED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\5899b0715eba95ef37252e33d183cb27\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\07999171975084034f9fa2d1d407a8d0\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\34f0a5c42fe480041f5da6a956d6e6d3\coordinatorlayout-1.1.0-alpha01\AndroidManifest.xml:17:1-22:12
@@ -83,6 +84,8 @@ MERGED from [de.hdodenhof:circleimageview:3.0.0] C:\Users\Hassan Javaid\.gradle\
 MERGED from [de.hdodenhof:circleimageview:3.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\1298f27ca15c01e44f0764c993abb834\circleimageview-3.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:23:5-40:19
+MERGED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:11:5-21:19
+MERGED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:11:5-21:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91032c975ff0624bcb810b2d4c91cbe1\firebase-auth-interop-19.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91032c975ff0624bcb810b2d4c91cbe1\firebase-auth-interop-19.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\7adf28df4adf273a588686972d04ed00\play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
@@ -171,6 +174,8 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Hassan Javaid\.gradle\ca
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\b0f5dc1dd65fd824a88826a2604954be\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:21:5-44
+MERGED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\5899b0715eba95ef37252e33d183cb27\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\5899b0715eba95ef37252e33d183cb27\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\07999171975084034f9fa2d1d407a8d0\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
@@ -285,6 +290,22 @@ ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gr
 		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:38:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\185ddcb70ea319809a0dbb501d4106ef\firebase-auth-19.2.0\AndroidManifest.xml:37:17-109
+provider#com.kbeanie.multipicker.utils.AMPFileProvider
+ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:14:13-76
+	android:exported
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:13:13-73
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:17:13-19:49
+	android:resource
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:19:17-46
+	android:name
+		ADDED from [com.kbeanie:multipicker:1.5] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\91d7d517e45fdf38ae8f3c2271c0ad74\jetified-multipicker-1.5\AndroidManifest.xml:18:17-67
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\Hassan Javaid\.gradle\caches\transforms-2\files-2.1\7adf28df4adf273a588686972d04ed00\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 	android:exported

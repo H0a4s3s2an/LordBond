@@ -103,6 +103,7 @@ public class LoginFragment extends BaseFragment implements LoginPresenter.onEven
         dismissProgressDialog();
         Toast.makeText(getActivity(), successMsg, Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getActivity(), DashBoradActivity.class));
+        getActivity().finish();
     }
     
     @Override

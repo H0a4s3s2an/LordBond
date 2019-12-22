@@ -35,7 +35,7 @@ public class CodeVerificationFragment extends BaseFragment implements LoginPrese
             verificationCodeFourth, verificationCodeFifth, verificationCodeSixth;
     private BaseFragment.FragmentChangeListener fragmentChangeListener;
     private LoginPresenter loginPresenter;
-    private String userName, email, password, phoneNumber, martialStatus, profileFor, gender;
+    private String userName, email, password, phoneNumber, martialStatus, profileFor, gender, dob;
     
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class CodeVerificationFragment extends BaseFragment implements LoginPrese
             martialStatus = getArguments().getString(Constants.MARTIAL_STAUS_CODE_KEY);
             profileFor = getArguments().getString(Constants.PROFILE_FOR_CODE_KEY);
             gender = getArguments().getString(Constants.GENDER_CODE_KEY);
+            dob = getArguments().getString(Constants.DOB_CODE_KEY);
         }
     
         sendVerificationCode(phoneNumber);
@@ -164,7 +165,7 @@ public class CodeVerificationFragment extends BaseFragment implements LoginPrese
         //creating the credential
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
         showProgressDialog("Loading...");
-        loginPresenter.register(userName, email, password, phoneNumber, gender, profileFor, martialStatus);
+        loginPresenter.register(userName, email, password, phoneNumber, gender, profileFor, martialStatus, dob);
         //      signing the user
 //        signInWithPhoneAuthCredential(credential);
     }
