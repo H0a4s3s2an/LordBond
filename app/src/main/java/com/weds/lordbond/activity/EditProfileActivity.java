@@ -46,7 +46,7 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     private EditText userInfoET, userNameET, userGenderET, userAgeET, userHeightET, userLanguageET,
             userMartialStatusET, userReligion, userCastET, userEducationET, userOccupationET,
             userIncomeET, userFamilyType, userFamilyStatusET, userFamilyValueET, userDobET, userLocationET,
-            userCountryET;
+            userCountryET, userComplextionET, anyDisabilityET, userBloodGroupET, employedInET;
     private LoginPresenter loginPresenter;
     private SignUp editProfileData;
     private ProgressBar horProgressBar;
@@ -63,6 +63,11 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     private String[] familyValueList;
     private String[] familyTypeList;
     private String[] familyStatusList;
+    private String[] anyDisabilityList;
+    private String[] complextionList;
+    private String[] bloodGroupList;
+    
+    
     private CameraImagePicker cameraPicker;
     private int countryItem, langItem, religionItem, castItem, educationItem, qualificationItem;
     private String filePath = null;
@@ -100,6 +105,10 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
         userFamilyValueET = findViewById(R.id.user_family_value_et);
         userDobET = findViewById(R.id.user_dob_et);
         userLocationET = findViewById(R.id.user_location_et);
+        anyDisabilityET = findViewById(R.id.user_disability_et);
+        userComplextionET = findViewById(R.id.user_complextion_et);
+        userBloodGroupET = findViewById(R.id.user_blood_group_et);
+        employedInET = findViewById(R.id.user_employed_in_et);
         submitBtn = findViewById(R.id.submit_btn);
         
         backImg.setOnClickListener(this);
@@ -118,6 +127,9 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
         userFamilyValueET.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
         editImg.setOnClickListener(this);
+        userComplextionET.setOnClickListener(this);
+        anyDisabilityET.setOnClickListener(this);
+        userBloodGroupET.setOnClickListener(this);
         
         martialStatusList = new String[] {
                 getString(R.string.never_married),
@@ -154,6 +166,29 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
                 getString(R.string.rich_family_type),
                 getString(R.string.upper_class_family_type),
                 getString(R.string.afluent_family_type)
+        };
+        
+        anyDisabilityList = new String[] {
+        		getString(R.string.yes),
+		        getString(R.string.no)
+        };
+        
+        complextionList = new String[] {
+        		getString(R.string.light),
+		        getString(R.string.fair),
+		        getString(R.string.medium),
+		        getString(R.string.olive),
+		        getString(R.string.brown),
+		        getString(R.string.black)
+        };
+        
+        bloodGroupList = new String[] {
+        		getString(R.string.aplus),
+		        getString(R.string.anegative),
+		        getString(R.string.bplus),
+		        getString(R.string.bnegative),
+		        getString(R.string.abplus),
+		        getString(R.string.abnegative)
         };
         
         showProgressDialog("Loading...");
@@ -344,6 +379,48 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
                 });
                 dialogFamilyValue.create().show();
                 break;
+	        case R.id.user_disability_et:
+		        hideKeyboard();
+		        AlertDialog.Builder dialogDiablility = new AlertDialog.Builder(this, R.style.MyAlertDialogTheme);
+		        dialogDiablility.setIcon(R.mipmap.ic_launcher);
+		        dialogDiablility.setTitle("Any Disability");
+		        dialogDiablility.setSingleChoiceItems(anyDisabilityList, -1, new DialogInterface.OnClickListener() {
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+				        anyDisabilityET.setText(anyDisabilityList[which]);
+				        dialog.dismiss();
+			        }
+		        });
+		        dialogDiablility.create().show();
+	        	break;
+	        case R.id.user_complextion_et:
+		        hideKeyboard();
+		        AlertDialog.Builder dialogComplextion = new AlertDialog.Builder(this, R.style.MyAlertDialogTheme);
+		        dialogComplextion.setIcon(R.mipmap.ic_launcher);
+		        dialogComplextion.setTitle("Complexion");
+		        dialogComplextion.setSingleChoiceItems(complextionList, -1, new DialogInterface.OnClickListener() {
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+				        userComplextionET.setText(complextionList[which]);
+				        dialog.dismiss();
+			        }
+		        });
+		        dialogComplextion.create().show();
+	        	break;
+	        case R.id.user_blood_group_et:
+		        hideKeyboard();
+		        AlertDialog.Builder dialogBloodGroup = new AlertDialog.Builder(this, R.style.MyAlertDialogTheme);
+		        dialogBloodGroup.setIcon(R.mipmap.ic_launcher);
+		        dialogBloodGroup.setTitle("Blood Group");
+		        dialogBloodGroup.setSingleChoiceItems(bloodGroupList, -1, new DialogInterface.OnClickListener() {
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+				        userBloodGroupET.setText(bloodGroupList[which]);
+				        dialog.dismiss();
+			        }
+		        });
+		        dialogBloodGroup.create().show();
+	        	break;
             case R.id.edit_img:
                 selectGalleryImage();
                 break;
@@ -367,8 +444,12 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
 	        	profileData.setFamilyStatus(userFamilyStatusET.getText().toString());
 	        	profileData.setFamilyType(userFamilyType.getText().toString());
 	        	profileData.setFamilyValue(userFamilyValueET.getText().toString());
-//	        	profileData.setAge(Integer.parseInt(userAgeET.getText().toString()));
+	        	profileData.setAge(Integer.parseInt(userAgeET.getText().toString()));
 	        	profileData.setMartialStatus(userMartialStatusET.getText().toString());
+	        	profileData.setDisablility(anyDisabilityET.getText().toString());
+	        	profileData.setBloodGroup(userBloodGroupET.getText().toString());
+	        	profileData.setComplextion(userComplextionET.getText().toString());
+	        	profileData.setEmployedIn(employedInET.getText().toString());
 	        	profileData.setProfileImage(filePath);
 	
 	            showProgressDialog("Updating...");
@@ -434,10 +515,10 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
     private void setData() {
         GlideHelper.loadImage(this, editProfileData.getProfileImage(), userImg);
         if (editProfileData.getBio() != null) userInfoET.setText(editProfileData.getBio());
-        if (editProfileData.getUserName() != null) userNameET.setText(editProfileData.getUserName());
+        if (editProfileData.getName() != null) userNameET.setText(editProfileData.getName());
         if (editProfileData.getGender() != null) userGenderET.setText(editProfileData.getGender());
         if (editProfileData.getHeight() != null) userHeightET.setText(editProfileData.getHeight());
-//        userAgeET.setText(editProfileData.getAge());
+        userAgeET.setText(String.valueOf(editProfileData.getAge()));
         if (editProfileData.getMartialStatus() != null) userMartialStatusET.setText(editProfileData.getMartialStatus());
         if (editProfileData.getLanguageId() != 0 && editProfileData.getLanguages() != null) {
             for (int i = 0; i < editProfileData.getLanguages().size(); i++) {
@@ -481,7 +562,11 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
                 }
             }
         }
-        
+	
+	    if (editProfileData.getDisablility() != null) anyDisabilityET.setText(editProfileData.getDisablility());
+	    if (editProfileData.getBloodGroup() != null) userBloodGroupET.setText(editProfileData.getBloodGroup());
+	    if (editProfileData.getComplextion() != null) userComplextionET.setText(editProfileData.getComplextion());
+	    if (editProfileData.getEmployedIn() != null) employedInET.setText(editProfileData.getEmployedIn());
         if (editProfileData.getAnnualIncome() != null) userIncomeET.setText(editProfileData.getAnnualIncome());
         if (editProfileData.getDateOfBirth() != null) userDobET.setText(editProfileData.getDateOfBirth());
         if (editProfileData.getOccupation() != null) userOccupationET.setText(editProfileData.getOccupation());

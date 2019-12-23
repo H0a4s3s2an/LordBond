@@ -101,7 +101,7 @@ public class ProfileActivity extends BaseActivity implements LoginPresenter.prof
         if (profileData.getFamilyType() != null) familyTypeTv.setText(profileData.getFamilyType());
         if (profileData.getFamilyValue() != null) familyValueTv.setText(profileData.getFamilyValue());
         if (profileData.getBloodGroup() != null) bloodGroupTv.setText(profileData.getBloodGroup());
-        if (profileData.getAge() != 0) ageTv.setText(profileData.getAge());
+        ageTv.setText(String.valueOf(profileData.getAge()));
         if (profileData.getMartialStatus() != null) martialStatusTv.setText(profileData.getMartialStatus());
         if (profileData.getHeight() != null )
             heightTv.setText(profileData.getHeight());

@@ -587,6 +587,116 @@
                 <com.weds.lordbond.custom_view.TextViewLightLordBond
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Any Disability / कोई अक्षमता"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_disability_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complextion / रंग"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_complextion_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Group / रक्त समूह"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_blood_group_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:inputType="none"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Employed In / में कार्यरत"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <EditText
+                    android:id="@+id/user_employed_in_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_gray_edit_round_bg"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <com.weds.lordbond.custom_view.TextViewLightLordBond
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="DOB / जन्म तिथि"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     />
