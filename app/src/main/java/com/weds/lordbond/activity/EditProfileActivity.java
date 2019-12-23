@@ -158,7 +158,6 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
         
         showProgressDialog("Loading...");
         loginPresenter.editProfile();
-        
     }
     
     @Override
@@ -368,6 +367,8 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
 	        	profileData.setFamilyStatus(userFamilyStatusET.getText().toString());
 	        	profileData.setFamilyType(userFamilyType.getText().toString());
 	        	profileData.setFamilyValue(userFamilyValueET.getText().toString());
+//	        	profileData.setAge(Integer.parseInt(userAgeET.getText().toString()));
+	        	profileData.setMartialStatus(userMartialStatusET.getText().toString());
 	        	profileData.setProfileImage(filePath);
 	
 	            showProgressDialog("Updating...");
@@ -436,6 +437,8 @@ public class EditProfileActivity extends BaseActivity implements LoginPresenter.
         if (editProfileData.getUserName() != null) userNameET.setText(editProfileData.getUserName());
         if (editProfileData.getGender() != null) userGenderET.setText(editProfileData.getGender());
         if (editProfileData.getHeight() != null) userHeightET.setText(editProfileData.getHeight());
+//        userAgeET.setText(editProfileData.getAge());
+        if (editProfileData.getMartialStatus() != null) userMartialStatusET.setText(editProfileData.getMartialStatus());
         if (editProfileData.getLanguageId() != 0 && editProfileData.getLanguages() != null) {
             for (int i = 0; i < editProfileData.getLanguages().size(); i++) {
                 if (editProfileData.getLanguages().get(i).getLanguageId() == editProfileData.getLanguageId()) {

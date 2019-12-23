@@ -18,7 +18,7 @@ import com.weds.lordbond.dataSource.LoginPresenter;
 public class ForgetPasswordFragment extends BaseFragment implements LoginPresenter.onEventClickLIstener,
         View.OnClickListener {
 
-    private EditText passwordET, confirmPassworsET;
+    private EditText passwordET, confirmPassworsET, mobileNumberET;
     private View rootView;
     private Button forgetPasswordBtn;
     private LoginPresenter loginPresenter;
@@ -39,6 +39,7 @@ public class ForgetPasswordFragment extends BaseFragment implements LoginPresent
     }
 
     private void initView() {
+        mobileNumberET = rootView.findViewById(R.id.number_et);
         passwordET = rootView.findViewById(R.id.password_et);
         confirmPassworsET = rootView.findViewById(R.id.confirm_password_et);
         forgetPasswordBtn = rootView.findViewById(R.id.forget_password_btn);
@@ -52,7 +53,7 @@ public class ForgetPasswordFragment extends BaseFragment implements LoginPresent
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forget_password_btn:
-                doForgetPassword(loginPresenter.validateForgetPasswordInput(passwordET, confirmPassworsET));
+                doForgetPassword(loginPresenter.validateForgetPasswordInput(mobileNumberET, passwordET, confirmPassworsET));
                 break;
         }
     }
@@ -60,7 +61,7 @@ public class ForgetPasswordFragment extends BaseFragment implements LoginPresent
     private void doForgetPassword(String errorMsg) {
         if (errorMsg.equalsIgnoreCase("")) {
             showProgressDialog("Loading...");
-            loginPresenter.forgetPassword(passwordET);
+            loginPresenter.forgetPassword(mobileNumberET, passwordET);
         } else {
             hideKeyboard();
             showSnackbar(getView(), errorMsg);

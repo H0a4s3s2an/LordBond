@@ -21,6 +21,12 @@ public class LoginResponse {
     @SerializedName("Mobile")
     private String mobile;
     
+    @SerializedName("Age")
+    private int age;
+    
+    @SerializedName("MaritalStatus")
+    private String martialStatus;
+    
     @SerializedName("FKCountryID")
     private int countryID;
     
@@ -471,12 +477,27 @@ public class LoginResponse {
         this.religionId = religionId;
     }
     
-    
     public String getCaste() {
         return caste;
     }
     
     public void setCaste(String caste) {
         this.caste = caste;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public String getMartialStatus() {
+        return martialStatus;
+    }
+    
+    public void setMartialStatus(String martialStatus) {
+        this.martialStatus = martialStatus;
     }
 }

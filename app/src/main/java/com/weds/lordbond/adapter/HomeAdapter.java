@@ -41,9 +41,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
     	
-    	holder.userNameTv.setText(arrayList.get(position).getUserName());
-    	holder.figureTv.setText(arrayList.get(position).getHeight().concat(" ").concat("Ft"));
-    	holder.educationTv.setText(arrayList.get(position).getOccupation());
+    	holder.userNameTv.setText(arrayList.get(position).getName());
+    	holder.figureTv.setText(arrayList.get(position).getAge()+ " " + "Yrs" + " " +
+			    arrayList.get(position).getHeight().concat(" ").concat("Ft"));
+    	holder.educationTv.setText(arrayList.get(position).getQualification() + "," + " " +
+			    arrayList.get(position).getOccupation() + "," + " " + arrayList.get(position).getReligion());
+    	holder.languageTv.setText(arrayList.get(position).getLanguage());
         GlideHelper.loadImage(context, arrayList.get(position).getProfileImage(), holder.userAvatar);
     	
         holder.profileLay.setOnClickListener(new View.OnClickListener() {

@@ -8,14 +8,14 @@
 
     <LinearLayout
         android:id="@+id/profile_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_img"
         android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:layout_weight="1"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
@@ -33,7 +33,7 @@
     <LinearLayout
         android:id="@+id/bio_ll"
         android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:layout_weight="2"
         android:layout_toRightOf="@id/card_img"
@@ -54,7 +54,7 @@
             android:id="@+id/figure_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="26 Yrs, 5 Ft 4 in / 163 Cms"
+            android:text=""
             android:layout_marginTop="15dp"
             android:textColor="@color/colorPrimaryDark"
             android:maxLines="1"
@@ -64,7 +64,7 @@
             android:id="@+id/education_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B.E , Software Developer , Hindu"
+            android:text=""
             android:layout_marginTop="5dp"
             android:textColor="@color/colorPrimaryDark"
             android:maxLines="1"
@@ -74,7 +74,7 @@
             android:id="@+id/language_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="English"
+            android:text=""
             android:textColor="@color/colorPrimaryDark"
             android:gravity="bottom"
             />

@@ -89,6 +89,15 @@ public class SignUp {
 
 	@SerializedName("AboutYou")
 	private String bio;
+	
+	@SerializedName("Age")
+	private int age;
+	
+	@SerializedName("MaritalStatus")
+	private String martialStatus;
+	
+	@SerializedName("Location")
+	private String location;
 
 	@SerializedName("CreateDate")
 	private String createDate;
@@ -543,5 +552,29 @@ public class SignUp {
 	
 	public void setReligions(List<Religions> religions) {
 		this.religions = religions;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public String getMartialStatus() {
+		return martialStatus;
+	}
+	
+	public void setMartialStatus(String martialStatus) {
+		this.martialStatus = martialStatus;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+	
+	public void setLocation(String location) {
+		this.location = location;
 	}
 }

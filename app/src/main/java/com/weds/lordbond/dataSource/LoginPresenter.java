@@ -103,14 +103,15 @@ public class LoginPresenter {
 	}
 	
 	
-	public void forgetPassword(EditText passwordET) {
+	public void forgetPassword(EditText number, EditText passwordET) {
 		
-		Call<UpdatePassword> call = APIClient.getAPIClient().forgetPassword("8989764523", passwordET.getText().toString());
+		Call<UpdatePassword> call = APIClient.getAPIClient().forgetPassword(number.getText().toString(),
+				passwordET.getText().toString());
 		call.enqueue(new Callback<UpdatePassword>() {
 			@Override
 			public void onResponse(Call<UpdatePassword> call, Response<UpdatePassword> response) {
 				if (response.body() != null && response.code() == 200) {
-					eventListener.onLoginSuccess("password updated");
+					eventListener.onLoginSuccess("password updated successfully");
 				} else {
 					eventListener.onLoginFail("error");
 				}
@@ -234,9 +235,11 @@ public class LoginPresenter {
 		return "";
 	}
 	
-	public String validateForgetPasswordInput(EditText passwordET, EditText confirmPassworsET) {
+	public String validateForgetPasswordInput(EditText number, EditText passwordET, EditText confirmPassworsET) {
 		if (! passwordET.getText().toString().equalsIgnoreCase(confirmPassworsET.getText().toString())) {
 			return "Password should match";
+		} else if (number.getText().toString().equalsIgnoreCase("")) {
+			return "please enter your registered number";
 		}
 		
 		return "";
